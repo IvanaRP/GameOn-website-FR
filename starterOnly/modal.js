@@ -21,3 +21,21 @@ function launchModal() {
 }
 
 
+  
+  //#1 Fermer la modale Ajouter la fonctionnalité au bouton (x)
+  //	Close modal on x button
+
+/* 
+   1.find close X in html
+   2. add Id=  closeform
+   3. get element by Id
+   4. add listener=  so it does something on CLICK
+   5. add funcion - in this case CLOSEMODAL
+   6.add style.display none on bground
+   7.modalbg=bground is already defined in DOM constat element
+
+*/   
+
+document.getElementById("closeform").addEventListener("click",function(closeModal){
+	modalbg.style.display = "none";
+  });
