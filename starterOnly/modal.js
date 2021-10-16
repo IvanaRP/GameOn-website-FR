@@ -184,7 +184,8 @@ document.getElementById("submitForm").addEventListener ("submit" , function (e) 
 	}
 
 
-
+/* #4 Ajouter confirmation quand envoie réussi*/
+/*Après une validation réussie, inclure un message de confirmation de la soumission réussie pour l'utilisateur (ex. "Merci ! Votre réservation a été reçue.")*/
 	/*conditin IF ELSE for CHECKEDBOX input-*removed "checked" in html **/
 // Le formulaire doit être valide quand l'utilisateur clique sur "Submit"
 
@@ -204,10 +205,9 @@ document.getElementById("submitForm").addEventListener ("submit" , function (e) 
 
 
 
-/* #4 Ajouter confirmation quand envoie réussi*/
-/*Après une validation réussie, inclure un message de confirmation de la soumission réussie pour l'utilisateur (ex. "Merci ! Votre réservation a été reçue.")*/
 
-/*add new modul MERCI in html = div class="thankyou"*/
+
+
 
  
 
