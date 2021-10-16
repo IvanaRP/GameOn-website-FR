@@ -203,21 +203,3 @@ document.getElementById("submitForm").addEventListener ("submit" , function (e) 
 
 });
 
-
-
-
-
-
-
- 
-
-
-/*close on FERMER*/
-
-/*make variable by ID , then close it*/
-
-/* OKEJ let thankyou = document.getElementById("thankyou")
-
-document.getElementById("thankyou").addEventListener("click",function(closeModal){
-	thankyou.style.display = "none";
-  });*/
