@@ -21,74 +21,20 @@ function editNav() {
   function launchModal() {
 	modalbg.style.display = "block";
   }
-	
-	//#1 Fermer la modale Ajouter la fonctionnalité au bouton (x)
-	//	Close modal on x button
 
-	/* 
-	1.find close X in html
-	2. add Id=  closeform
-	3. get element by Id
-	4. add listener=  so it does something on CLICK
-	5. add funcion - in this case CLOSEMODAL
-	6.add style.display none on bground
-	7.modalbg=bground is already defined in DOM constat element
-
-	*/ 
-
-
-
-
-// #1 fermer la modale - Ajouter la fonctionnalité au bouton (x)
-//	Close modal on x button
-
-  document.getElementById("closeform").addEventListener("click",function(closeModal){
+	// #1 fermer la modale - Ajouter la fonctionnalité au bouton (x)
+  document.getElementById("closeform").addEventListener("click",function(){
 	modalbg.style.display = "none";
   });
 
-
 	//#2 Implémenter entrées du formulaire
+	//  #3 Ajouter validation ou messages d'erreur
 
-	/*(1) Lier les labels aux entrées dans le HTML en utilisant les attributs "for" et "id" dans le code existant.
-			Corriger le code HTML quand nécessaire.
-			EXPLICIT LABEL (recommended for use) - the label is connected to an input via "for" and "id" */ 
-		/*DONE FOR AND ID*/
-	/*(2) Utiliser du JavaScript pur (pas de jQuery) pour terminer le formulaire :
-	Le formulaire doit être valide quand l'utilisateur clique sur "Submit" Les données doivent être saisies correctement :
-	/*(1) Le champ Prénom a un minimum de 2 caractères / n'est pas vide.*/
-
-
-//#2 Implémenter entrées du formulaire
-
-// (1) Lier les labels aux entrées dans le HTML en utilisant les attributs "for" et "id" dans le code existant. Corriger le code HTML quand nécessaire.
-// (2) Utiliser du JavaScript pur (pas de jQuery) pour terminer le formulaire :
-
-// Le formulaire doit être valide quand l'utilisateur clique sur "Submit"
-// Les données doivent être saisies correctement :
-// (1) Le champ Prénom a un minimum de 2 caractères / n'est pas vide.
-// (2) Le champ du nom de famille a un minimum de 2 caractères / n'est pas vide.
-// (3) L'adresse électronique est valide.
-// (4) Pour le nombre de concours, une valeur numérique est saisie.
-// (5) Un bouton radio est sélectionné.
-// (6) La case des conditions générales est cochée, l'autre case est facultative / peut être laissée décochée.
-// Conserver les données du formulaire (ne pas effacer le formulaire) lorsqu'il ne passe pas la validation.
-
-
-
-//  #3 Ajouter validation ou messages d'erreur
-// Des messages d'erreur spécifiques doivent apparaître sous l'entrée qui n'est pas correcte. Les messages d'erreur doivent s'afficher sous le champ de saisie associé. Exemples :
-
-// "Veuillez entrer 2 caractères ou plus pour le champ du nom."
-// "Vous devez choisir une option."
-// "Vous devez vérifier que vous acceptez les termes et conditions."
-// "Vous devez entrer votre date de naissance."
-		
-
-
+//Get element by ID add listener 
 document.getElementById("submitForm").addEventListener ("submit" , function (e) {
 
-
-	let first = document.getElementById("first")//add variables from id
+	//add variables from id
+	let first = document.getElementById("first")
 	let last = document.getElementById("last")
 	let email =document.getElementById("email")
 	let checkbox = document.getElementById("checkbox1")
@@ -109,74 +55,58 @@ document.getElementById("submitForm").addEventListener ("submit" , function (e) 
 	let error6 = document.getElementById("error6")
 	let error7 = document.getElementById("error7")
 
-
+	// Le champ Prénom a un minimum de 2 caractères / n'est pas vide.
 	/*conditin IF ELSE for FIRST name input*/
 	if (first.value == "" || first.value.lenght < 2) {
 		e.preventDefault();//stop form from submitting
 		error1.style.display = "inline-block"
-		
 		return false;
 	} else {
-		
 		error1.style.display = "none"
 	}
 
-	
 
 	/*conditin IF ELSE for LAST name input*/
-
 	if (last.value == "" || last.value.lenght < 2) {
 		e.preventDefault();//stop form from submitting
-		
 		error2.style.display = "inline-block"
-		
 		return false;
 	}  else {
-		
 		error2.style.display = "none"
 	}
 	
 	
 	/*conditin IF ELSE for EMAIL input*/
-
 	if (!email.value.match(mailformat)){
 		e.preventDefault();//stop form from submitting
 		error3.style.display = "inline-block"
 		return false;
-
 	} else {
-		
 		error3.style.display = "none"
 	}
 
 	/*conditin IF ELSE for DATE input*/
-
 	if (date.value == "") {
 		e.preventDefault();//stop form from submitting
 		error4.style.display = "inline-block"
 		return false;
 	}   else {
-		
 		error4.style.display = "none"
 	}
 
 
 	/*conditin IF ELSE for 	QUANTITY input if its empty or if its not a number = send error message*/
-
 	if (numberOfGames.value ==  "" || NaN ) {
 		e.preventDefault();//stop form from submitting
 		error5.style.display = "inline-block"
 		return false;
 	}  else {
-		
 		error5.style.display = "none"
 	}
 
 	/*conditin IF ELSE for LOCATION input - if one is cheched than ok*/
-
 	if (location1.checked || location2.checked || location3.checked || location4.checked|| location5.checked || location6.checked ) {
 		error6.style.display = "none"
-
 	}  else {
 		e.preventDefault();//stop form from submitting
 		error6.style.display = "inline-block";
@@ -184,21 +114,16 @@ document.getElementById("submitForm").addEventListener ("submit" , function (e) 
 	}
 
 
-/* #4 Ajouter confirmation quand envoie réussi*/
-/*Après une validation réussie, inclure un message de confirmation de la soumission réussie pour l'utilisateur (ex. "Merci ! Votre réservation a été reçue.")*/
-	/*conditin IF ELSE for CHECKEDBOX input-*removed "checked" in html **/
-// Le formulaire doit être valide quand l'utilisateur clique sur "Submit"
-
+    /* #4 Ajouter confirmation quand envoie réussi*/
+	// Le formulaire doit être valide quand l'utilisateur clique sur "Submit"
 	if (checkbox.checked) {
 		alert("Merci ! Votre réservation a été reçue.")
 		error7.style.display = "none"
 		return true;
-		
 	}   else {
 		e.preventDefault();//stop form from submitting
 		error7.style.display = "inline-block";
 		return false;
-		
 	}
 
 });
