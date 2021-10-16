@@ -76,13 +76,14 @@ function editNav() {
 
 
 //  #3 Ajouter validation ou messages d'erreur
-
 // Des messages d'erreur spécifiques doivent apparaître sous l'entrée qui n'est pas correcte. Les messages d'erreur doivent s'afficher sous le champ de saisie associé. Exemples :
 
 // "Veuillez entrer 2 caractères ou plus pour le champ du nom."
 // "Vous devez choisir une option."
 // "Vous devez vérifier que vous acceptez les termes et conditions."
 // "Vous devez entrer votre date de naissance."
+		
+
 
 document.getElementById("submitForm").addEventListener ("submit" , function (e) {
 
