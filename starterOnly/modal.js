@@ -47,69 +47,70 @@ document.getElementById("submitForm").addEventListener ("submit" , function (e) 
 	let location4 = document.getElementById("location4")
 	let location5 = document.getElementById("location5")
 	let location6 = document.getElementById("location6")
-	let error1 = document.getElementById("error1")
-	let error2 = document.getElementById("error2")
-	let error3 = document.getElementById("error3")
-	let error4 = document.getElementById("error4")
-	let error5 = document.getElementById("error5")
-	let error6 = document.getElementById("error6")
-	let error7 = document.getElementById("error7")
+
+	let firstError = document.getElementById("first-error")
+	let lastError = document.getElementById("last-error")
+	let emailError = document.getElementById("email-error")
+	let birthdateError = document.getElementById("birthdate-error")
+	let quantityError = document.getElementById("quantity-error")
+	let locationError = document.getElementById("location-error")
+	let checkboxError = document.getElementById("checkbox-error")
 
 	// Le champ Prénom a un minimum de 2 caractères / n'est pas vide.
 	/*conditin IF ELSE for FIRST name input*/
 	if (first.value == "" || first.value.lenght < 2) {
 		e.preventDefault();//stop form from submitting
-		error1.style.display = "inline-block"
+		firstError.style.display = "inline-block"
 		return false;
 	} else {
-		error1.style.display = "none"
+		firstError.style.display = "none"
 	}
 
 
 	/*conditin IF ELSE for LAST name input*/
 	if (last.value == "" || last.value.lenght < 2) {
 		e.preventDefault();//stop form from submitting
-		error2.style.display = "inline-block"
+		lastError.style.display = "inline-block"
 		return false;
 	}  else {
-		error2.style.display = "none"
+		lastError.style.display = "none"
 	}
 	
 	
 	/*conditin IF ELSE for EMAIL input*/
 	if (!email.value.match(mailformat)){
 		e.preventDefault();//stop form from submitting
-		error3.style.display = "inline-block"
+		emailError.style.display = "inline-block"
 		return false;
 	} else {
-		error3.style.display = "none"
+		emailError.style.display = "none"
 	}
 
 	/*conditin IF ELSE for DATE input*/
 	if (date.value == "") {
 		e.preventDefault();//stop form from submitting
-		error4.style.display = "inline-block"
+		birthdateError.style.display = "inline-block"
 		return false;
 	}   else {
-		error4.style.display = "none"
+		birthdateError.style.display = "none"
 	}
 
 
 	/*conditin IF ELSE for 	QUANTITY input if its empty or if its not a number = send error message*/
 	if (numberOfGames.value ==  "" || NaN ) {
 		e.preventDefault();//stop form from submitting
-		error5.style.display = "inline-block"
+		quantityError.style.display = "inline-block"
 		return false;
 	}  else {
-		error5.style.display = "none"
+		quantityError.style.display = "none"
 	}
 
 	/*conditin IF ELSE for LOCATION input - if one is cheched than ok*/
 	if (location1.checked || location2.checked || location3.checked || location4.checked|| location5.checked || location6.checked ) {
-		error6.style.display = "none"
+		locationError.style.display = "none"
 	}  else {
 		e.preventDefault();//stop form from submitting
-		error6.style.display = "inline-block";
+		locationError.style.display = "inline-block";
 		return false;
 	}
 
@@ -118,11 +119,11 @@ document.getElementById("submitForm").addEventListener ("submit" , function (e) 
 	// Le formulaire doit être valide quand l'utilisateur clique sur "Submit"
 	if (checkbox.checked) {
 		alert("Merci ! Votre réservation a été reçue.")
-		error7.style.display = "none"
+		checkboxError.style.display = "none"
 		return true;
 	}   else {
 		e.preventDefault();//stop form from submitting
-		error7.style.display = "inline-block";
+		checkboxError.style.display = "inline-block";
 		return false;
 	}
 
