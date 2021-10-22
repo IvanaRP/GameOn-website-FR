@@ -72,27 +72,40 @@ document.getElementById("submitForm").addEventListener ("submit" , function (e) 
 	let buttonSubmit = document.getElementById("buttonSubmit");
 
 
-
+	
 	/*conditin IF ELSE for FIRST name input*/
 	// first name should not be EMPTY , LESS THEN 2 CHARACTERS or an SPACE character
-	// 
-	if (first.value == "" || first.value.lenght < 2 || first.value == (/\s/g, '').length) {
+	
+	if (first.value == "" || first.value.lenght < 2) {
 		e.preventDefault();//stop form from submitting
 		firstError.style.display = "inline-block"
 		return false;
-	} else {
+
+	} else  if (/\s/.test(first.value)){ //stop form from submitting if there is space 
+		e.preventDefault();//stop form from submitting
+		console.log(first);
+		firstError.style.display = "inline-block"
+		return false;
+	}
+	else {
 		firstError.style.display = "none"
 	}
 	
 	/*conditin IF ELSE for LAST name input*/
-	if (last.value == "" || last.value.lenght < 2 || last.value == (/\s/g, '').length) {
+	if (last.value == "" || last.value.lenght < 2) {
 		e.preventDefault();//stop form from submitting
-		console.log('string only contains whitespace (ie. spaces, tabs or line breaks)');
 		lastError.style.display = "inline-block"
 		return false;
-	}  else {
+	} else  if (/\s/.test(last.value)){ //stop form from submitting if there is space 
+		e.preventDefault();//stop form from submitting
+		console.log(first);
+		firstError.style.display = "inline-block"
+		return false;
+	}
+	 else {
 		lastError.style.display = "none"
 	}
+
 
 	
 	/*conditin IF ELSE for EMAIL input*/
@@ -147,7 +160,7 @@ document.getElementById("submitForm").addEventListener ("submit" , function (e) 
 		formLocation.style.display = "none";
 		formCheckbox.style.display = "none";
 		messageSubmit.style.display = "flex";
-		
+
 		buttonSubmit.style.display = "none";
 		btnCLoseForm.style.display = "flex";
 
