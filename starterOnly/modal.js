@@ -56,26 +56,28 @@ document.getElementById("submitForm").addEventListener ("submit" , function (e) 
 	let locationError = document.getElementById("location-error")
 	let checkboxError = document.getElementById("checkbox-error")
 
-	// Le champ Prénom a un minimum de 2 caractères / n'est pas vide.
+
 	/*conditin IF ELSE for FIRST name input*/
-	if (first.value == "" || first.value.lenght < 2) {
+	// first name should not be EMPTY , LESS THEN 2 CHARACTERS or an SPACE character
+	// 
+	if (first.value == "" || first.value.lenght < 2 || first.value == (/\s/g, '').length) {
 		e.preventDefault();//stop form from submitting
 		firstError.style.display = "inline-block"
 		return false;
 	} else {
 		firstError.style.display = "none"
 	}
-
-
+	
 	/*conditin IF ELSE for LAST name input*/
-	if (last.value == "" || last.value.lenght < 2) {
+	if (last.value == "" || last.value.lenght < 2 || last.value == (/\s/g, '').length) {
 		e.preventDefault();//stop form from submitting
+		console.log('string only contains whitespace (ie. spaces, tabs or line breaks)');
 		lastError.style.display = "inline-block"
 		return false;
 	}  else {
 		lastError.style.display = "none"
 	}
-	
+
 	
 	/*conditin IF ELSE for EMAIL input*/
 	if (!email.value.match(mailformat)){
