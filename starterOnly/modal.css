@@ -537,3 +537,29 @@ footer {
   color: red;
   margin-bottom: 11px;
 }
+
+.messageSubmit {
+  display: none;
+  justify-content: center;
+  align-content: center;
+  font-family: var(--font-default);
+  font-size: 30px;
+  text-align: center;
+  font-weight: normal;
+  color: white;
+  margin-bottom: 11px;
+  padding-top: 50px;
+  padding-bottom: 200px;
+}
+
+.buttonCloseForm {
+  display: none;
+  background: #fe142f;
+  margin: 0 auto;
+  border-radius: 7px;
+  font-size: 1rem;
+  padding: 12px 82px;
+  color: #fff;
+  cursor: pointer;
+  border: 0;
+}

@@ -56,10 +56,10 @@
           <span class="close" id="closeform"></span>
           <div class="modal-body">
             <form id="submitForm" name="reserve" action="index.html" method="get" >
-              <!-- onsubmit="return validate()" -->
+            
               
               <div
-                class="formData">
+                class="formData" id="formFirst">
                 <label for="first">Prénom</label><br>
                 <input class="text-control" type="text" id="first" name="first" /><br>
               </div>
@@ -67,37 +67,37 @@
              
 
               <div
-                class="formData">
+                class="formData" id="formLast">
                 <label for="last">Nom</label><br>
                 <input class="text-control" type="text" id="last" name="last" minlength="2"/><br>
               </div>
               <div id="last-error" class="error">Veuillez entrer 2 caractères ou plus sans espace pour le champ du nom.</div>
 
               <div
-                class="formData">
+                class="formData" id="formEmail">
                 <label for="email">E-mail</label><br>
                 <input class="text-control" type="email" id="email" name="email"  minlength="2"/><br>
               </div>
               <div id="email-error" class="error">Entrez une adresse valide. Exemple : contact@nom.com</div>
 
               <div
-                class="formData">
+                class="formData" id="formBirthdate">
                 <label for="birthdate">Date de naissance</label><br>
                 <input class="text-control" type="date" id="birthdate" name="birthdate"/><br>
               </div>
               <div id="birthdate-error" class="error">Vous devez entrer votre date de naissance.</div>
 
               <div
-                class="formData">
+                class="formData" id="formQuantity">
                 <label for="quantity">À combien de tournois GameOn avez-vous déjà participé ?</label><br>
                 <input type="number" class="text-control" id="quantity" name="quantity" min="0" max="99">
               </div>
               <div id="quantity-error" class="error">Vous devez renseigner ce champ.</div>
 
-              <p class="text-label">Quelles villes ?</p>
 
               <div
-                class="formData">
+                class="formData" id="formLocation">
+                <label class="text-label" for="location">Quelles villes ?</label><br>
                 <input class="checkbox-input" type="radio" id="location1" name="location" value="New York"/>
                 <label class="checkbox-label" for="location1">
                   <span class="checkbox-icon"></span> New York</label>
@@ -127,7 +127,7 @@
 
 
               <div
-                class="formData">
+                class="formData" id="formCheckbox">
                 <input class="checkbox-input" type="checkbox" id="checkbox1"/>
                 <label class="checkbox2-label" for="checkbox1" >
                   <span class="checkbox-icon"></span>
@@ -143,7 +143,11 @@
               </div>
               <div id="checkbox-error" class="error">Vous devez vérifier que vous acceptez les termes et conditions.</div>
 
-              <input class="btn-submit" type="submit" class="button" value="C'est parti"/>
+             <!-- Merci message -->
+              <div id="messageSubmit" class="messageSubmit">Merci ! <br>Votre réservation a été reçue.</div>
+              <input class="buttonCloseForm" type="submit" class="button" id="buttonCloseForm" value="Fermer"/>
+
+              <input class="btn-submit" type="submit" class="button" id="buttonSubmit" value="C'est parti"/>
             </form>
 
           </div>

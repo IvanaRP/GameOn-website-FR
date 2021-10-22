@@ -57,6 +57,22 @@ document.getElementById("submitForm").addEventListener ("submit" , function (e) 
 	let checkboxError = document.getElementById("checkbox-error")
 
 
+	let formFirst = document.getElementById("formFirst");
+	let formLast = document.getElementById("formLast");
+	let formEmail = document.getElementById("formEmail");
+	let formBirthdate = document.getElementById("formBirthdate");
+	let formQuantity = document.getElementById("formQuantity");
+	let formLocation = document.getElementById("formLocation");
+	let formCheckbox = document.getElementById("formCheckbox");
+
+	let messageSubmit = document.getElementById("messageSubmit");
+
+	let btnCLoseForm = document.getElementById("buttonCloseForm");
+
+	let buttonSubmit = document.getElementById("buttonSubmit");
+
+
+
 	/*conditin IF ELSE for FIRST name input*/
 	// first name should not be EMPTY , LESS THEN 2 CHARACTERS or an SPACE character
 	// 
@@ -120,14 +136,38 @@ document.getElementById("submitForm").addEventListener ("submit" , function (e) 
     /* #4 Ajouter confirmation quand envoie réussi*/
 	// Le formulaire doit être valide quand l'utilisateur clique sur "Submit"
 	if (checkbox.checked) {
-		alert("Merci ! Votre réservation a été reçue.")
+		e.preventDefault();//stop form from submitting
+		// alert("Merci ! Votre réservation a été reçue.")
+	
+		formFirst.style.display = "none";
+		formLast.style.display = "none";
+		formEmail.style.display = "none";
+		formBirthdate.style.display = "none";
+		formQuantity.style.display = "none";
+		formLocation.style.display = "none";
+		formCheckbox.style.display = "none";
+		messageSubmit.style.display = "flex";
+		
+		buttonSubmit.style.display = "none";
+		btnCLoseForm.style.display = "flex";
+
 		checkboxError.style.display = "none"
+
+
+			// #1 fermer la modale - Ajouter la fonctionnalité au bouton (x)
+			btnCLoseForm.addEventListener("click",function(){
+				modalbg.style.display = "none";
+			  });
+
 		return true;
 	}   else {
 		e.preventDefault();//stop form from submitting
 		checkboxError.style.display = "inline-block";
 		return false;
 	}
+
+
+
 
 });
 
